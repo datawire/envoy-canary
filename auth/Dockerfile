@@ -1,6 +1,5 @@
 # Run server
-FROM alpine:3.5
-RUN apk add --no-cache autoconf g++ python python-dev py2-pip py2-gevent ca-certificates && update-ca-certificates
+FROM python:3-alpine
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . /app
