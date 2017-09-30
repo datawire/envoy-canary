@@ -7,9 +7,9 @@ spec:
   selector:
     app: {{service.name}}
   ports:
-    - protocol: {{service.protocol or 'TCP'}}
-      port: {{service.port or '80'}}
-      targetPort: {{service.targetPort or '8080'}}
+    - protocol: {{service.protocol|default('TCP')}}
+      port: {{service.port|default('80')}}
+      targetPort: {{service.targetPort|default('8080')}}
   type: ClusterIP
 ---
 apiVersion: extensions/v1beta1

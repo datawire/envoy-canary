@@ -73,7 +73,7 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
 ---
-{% set routes = service.routes or {} -%}
+{% set routes = service.routes|default({}) -%}
 apiVersion: v1
 kind: ConfigMap
 metadata:
